@@ -13,8 +13,9 @@
     --card: #e2e8f0;
     --card-foreground: #020617;
 
-    --accent: #be123c;
-    --accent-hover: #e11d48;
+    --accent: #e11d48;
+    --accent-hover: #be123c;
+    --accent-foreground: #f1f5f9;
   }
 
   .dark {
@@ -27,8 +28,8 @@
     --card: #1e293b;
     --card-foreground: #f1f5f9;
 
-    --accent: #be123c;
-    --accent-hover: #e11d48;
+    --accent: #e11d48;
+    --accent-hover: #be123c;
   }
 }
 
@@ -39,4 +40,9 @@
       "rlig" 1,
       "calt" 1;
   }
+}
+
+.menu ul li:hover > ul {
+  display: flex;
+  visibility: visible; /* Show submenus on hover */
 }

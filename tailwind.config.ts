@@ -29,6 +29,7 @@ const config: Config = {
         accent: {
           DEFAULT: "var(--accent)",
           hover: "var(--accent-hover)",
+          foreground: "var(--accent-foreground)",
         },
       },
       fontFamily: {

@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["https://freelancers-hub.ca/"],
+    domains: ["freelancers-hub.ca"],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
