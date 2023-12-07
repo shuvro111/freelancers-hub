@@ -27,7 +27,7 @@ export const Header = () => {
         />
         <NavMenu />
 
-        <div className="flex items-center gap-x-4">
+        <div className="hidden items-center gap-x-4 lg:flex">
           <button
             onClick={() => setBookConsultationOpen(true)}
             className="bg-accent hover:bg-accent-hover text-accent-foreground flex h-full items-center gap-x-2 rounded px-6 py-3 font-semibold transition"
@@ -56,33 +56,35 @@ export const Header = () => {
                   business goals and get started on the path to success.
                 </p>
 
-                <div
-                  className="calendly-inline-widget"
-                  data-url="https://calendly.com/freelancers-hub/book-a-meeting?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=f8fafc&amp;text_color=020617&amp;primary_color=e11d48"
-                  style={{
-                    position: "relative",
-                    minWidth: "320px",
-                    height: "630px",
-                    marginTop: "1rem",
-                  }}
-                  data-processed="true"
-                >
-                  <div className="calendly-spinner">
-                    <div className="calendly-bounce1"></div>
-                    <div className="calendly-bounce2"></div>
-                    <div className="calendly-bounce3"></div>
-                  </div>
-                  <iframe
-                    src="https://calendly.com/freelancers-hub/book-a-meeting?embed_domain=freelancers-hub.ca&amp;embed_type=Inline&amp;hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=f8fafc&amp;text_color=020617&amp;primary_color=e11d48"
-                    width="100%"
-                    height="100%"
-                    frameBorder="0"
-                    title="Select a Date &amp; Time - Calendly"
+                {bookConsultationOpen ? (
+                  <div
+                    className="calendly-inline-widget"
+                    data-url="https://calendly.com/freelancers-hub/book-a-meeting?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=f8fafc&amp;text_color=020617&amp;primary_color=e11d48"
                     style={{
-                      borderRadius: "6px",
+                      position: "relative",
+                      minWidth: "320px",
+                      height: "630px",
+                      marginTop: "1rem",
                     }}
-                  ></iframe>
-                </div>
+                    data-processed="true"
+                  >
+                    <div className="calendly-spinner">
+                      <div className="calendly-bounce1"></div>
+                      <div className="calendly-bounce2"></div>
+                      <div className="calendly-bounce3"></div>
+                    </div>
+                    <iframe
+                      src="https://calendly.com/freelancers-hub/book-a-meeting?embed_domain=freelancers-hub.ca&amp;embed_type=Inline&amp;hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=f8fafc&amp;text_color=020617&amp;primary_color=e11d48"
+                      width="100%"
+                      height="100%"
+                      frameBorder="0"
+                      title="Select a Date &amp; Time - Calendly"
+                      style={{
+                        borderRadius: "6px",
+                      }}
+                    ></iframe>
+                  </div>
+                ) : null}
                 <script
                   type="text/javascript"
                   src="https://assets.calendly.com/assets/external/widget.js"

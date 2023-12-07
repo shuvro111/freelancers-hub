@@ -42,7 +42,9 @@
   }
 }
 
-.menu ul li:hover > ul {
+.menu ul li:hover > .sub-menu,
+.menu ul li:hover > .nested-sub-menu,
+.menu ul li:hover > .megamenu-content {
   display: flex;
   visibility: visible; /* Show submenus on hover */
 }

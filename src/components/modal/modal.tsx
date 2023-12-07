@@ -9,7 +9,7 @@ export interface BaseProps {
 
 export interface BackdropProps extends BaseProps {
   open: boolean
-  onClose: () => void
+  onClose(): void
 }
 
 export interface ModalContentProps extends BaseProps {
@@ -17,7 +17,7 @@ export interface ModalContentProps extends BaseProps {
 }
 
 export interface ModalTriggerProps extends BaseProps {
-  onClose: () => void
+  onClose(): void
 }
 
 export const Modal = ({ children, className }: BaseProps) => {
@@ -60,7 +60,7 @@ export const ModalContent = ({
   return (
     <div
       className={cn(
-        `transition-all duration-200 ease-out`,
+        `transition-all duration-500 ease-in-out`,
         `${
           open
             ? "translate-x-0 opacity-100"
