@@ -1,3 +1,4 @@
+import { FAQ } from "@/components/faq/faq"
 import { Header } from "@/components/header"
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
         <p className="text-center text-lg">
           Top-Notch Web Design and Digital Marketing Agency
         </p>
+        <FAQ />
       </div>
     </main>
   )

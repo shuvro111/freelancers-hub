@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["freelancers-hub.ca"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "freelancers-hub.ca",
+      },
+    ],
   },
 }
 

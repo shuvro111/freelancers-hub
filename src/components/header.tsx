@@ -3,9 +3,10 @@
 import { useState } from "react"
 import Image from "next/image"
 import { ThemeToggle } from "@/theme/theme-toggle"
-import { TbArrowRight, TbX } from "react-icons/tb"
+import { TbArrowRight, TbMenu2, TbX } from "react-icons/tb"
 
 import { NavMenu } from "@/components/menu/nav-menu"
+import { MobileMenu } from "@/components/mobile-menu"
 import {
   Backdrop,
   Modal,
@@ -15,6 +16,7 @@ import {
 
 export const Header = () => {
   const [bookConsultationOpen, setBookConsultationOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <div className="bg-background dark:bg-background-2 absolute left-0 top-0 w-full shadow">
@@ -27,10 +29,10 @@ export const Header = () => {
         />
         <NavMenu />
 
-        <div className="hidden items-center gap-x-4 lg:flex">
+        <div className="flex items-center gap-x-4">
           <button
             onClick={() => setBookConsultationOpen(true)}
-            className="bg-accent hover:bg-accent-hover text-accent-foreground flex h-full items-center gap-x-2 rounded px-6 py-3 font-semibold transition"
+            className="bg-accent hover:bg-accent-hover text-accent-foreground hidden h-full items-center gap-x-2 rounded px-6 py-3 font-semibold transition md:flex"
           >
             Book A Consultation <TbArrowRight strokeWidth="3" />
           </button>
@@ -42,7 +44,7 @@ export const Header = () => {
             >
               <ModalContent
                 open={bookConsultationOpen}
-                className="bg-background-2 absolute right-0 top-0 flex h-screen w-1/4 flex-col gap-y-4 p-8"
+                className="bg-background-2 absolute right-0 top-0 flex h-screen w-2/4 flex-col gap-y-4 p-8"
               >
                 <ModalTrigger
                   onClose={() => setBookConsultationOpen(false)}
@@ -94,6 +96,32 @@ export const Header = () => {
             </Backdrop>
           </Modal>
           <ThemeToggle />
+          <div className="flex xl:hidden">
+            <button onClick={() => setMobileMenuOpen(true)}>
+              <TbMenu2 size={28} />
+            </button>
+            <Modal>
+              <Backdrop
+                open={mobileMenuOpen}
+                onClose={() => setMobileMenuOpen(false)}
+                className=""
+              >
+                <ModalContent
+                  open={mobileMenuOpen}
+                  className="bg-background-2 absolute right-0 top-0 flex h-screen w-1/2 flex-col gap-y-4 p-8"
+                >
+                  <ModalTrigger
+                    onClose={() => setMobileMenuOpen(false)}
+                    className="relative flex w-full cursor-pointer justify-end"
+                  >
+                    <TbX size={28} />
+                  </ModalTrigger>
+
+                  {mobileMenuOpen ? <MobileMenu /> : null}
+                </ModalContent>
+              </Backdrop>
+            </Modal>
+          </div>
         </div>
       </header>
     </div>

@@ -161,3 +161,47 @@ export const megamenu: NavLink[] = [
     ],
   },
 ]
+
+export const mobileMenu: NavItem[] = menu.map((item) =>
+  item.title === "Services" ? { ...item, children: megamenu } : { ...item }
+)
+
+//Accordion Data
+
+interface AccordionItem {
+  title: string
+  content: string
+}
+
+export const accordionData: AccordionItem[] = [
+  {
+    title: "What is SEO?",
+    content:
+      "SEO stands for Search Engine Optimization. It is the process of optimizing your website to get organic, or un-paid, traffic from the search engine results page.",
+  },
+  {
+    title: "How long does SEO take?",
+    content:
+      "It depends on the competitiveness of your industry and the popularity of your keywords. For example, ranking for a keyword like “shoes” is going to take longer than ranking for a more specific keyword like “red high-heeled shoes with bows”.",
+  },
+  {
+    title: "What is the difference between SEO and SEM?",
+    content:
+      "SEO is the process of optimizing your website to get organic, or un-paid, traffic from the search engine results page. SEM is the process of getting traffic from purchasing ads on search engines.",
+  },
+  {
+    title: "What is the difference between SEO and PPC?",
+    content:
+      "SEO is the process of optimizing your website to get organic, or un-paid, traffic from the search engine results page. PPC is the process of getting traffic from purchasing ads on search engines.",
+  },
+  {
+    title: "What's the benefit of SEO?",
+    content:
+      "SEO is the process of optimizing your website to get organic, or un-paid, traffic from the search engine results page.",
+  },
+  {
+    title: "Why Choose Freelancers Hub For SEO?",
+    content:
+      "We are a team of SEO experts with years of experience in the field. We have helped many businesses grow their online presence and increase their revenue through our SEO services. Our team is always up-to-date with the latest trends in SEO so we can provide you with the best possible service. If you want to learn more about how we can help your business, contact us today!",
+  },
+]
