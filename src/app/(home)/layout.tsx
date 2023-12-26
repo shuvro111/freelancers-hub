@@ -1,8 +1,7 @@
 import type { Metadata } from "next"
 
-import "./globals.css"
+import "@/app/globals.css"
 
-import { TailwindIndicator } from "@/dev/tailwind-indicator"
 import { ThemeProvider } from "@/theme/theme-provider"
 
 import { siteConfig } from "@/config/site"
@@ -29,15 +28,9 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          "bg-background min-h-screen font-sans antialiased",
-          fontSans.variable
-        )}
-      >
+      <body className={cn("font-sans antialiased", fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
-          <TailwindIndicator />
         </ThemeProvider>
       </body>
     </html>

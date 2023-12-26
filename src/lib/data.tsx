@@ -1,5 +1,5 @@
 import { Icons } from "@/lib/icons"
-import { ServicesMegaMenu } from "@/components/menu/services-megamenu"
+import { ServicesMegaMenu } from "@/components/ui/menu/services-megamenu"
 
 interface NavLink {
   title: string

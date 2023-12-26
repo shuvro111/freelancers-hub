@@ -6,6 +6,14 @@ const nextConfig = {
         protocol: "https",
         hostname: "freelancers-hub.ca",
       },
+      {
+        protocol: "https",
+        hostname: "cdn-jbjfh.nitrocdn.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn-kdmof.nitrocdn.com",
+      },
     ],
   },
 }

@@ -10,7 +10,7 @@ import {
   Accordion,
   AccordionContent,
   AccordionTrigger,
-} from "@/components/accordion/accordion"
+} from "@/components/ui/accordion/accordion"
 
 export const FAQ = () => {
   const [expandedItems, setExpandedItems] = useState<boolean[]>(

@@ -21,11 +21,13 @@
   .dark {
     --background: #020617;
     --background-2: #0f172a;
-    --background-3: #1e293b;
+    --background-3: #121b2f;
+    --background-4: #121b2f;
 
     --foreground: #f1f5f9;
 
     --card: #1e293b;
+    --card-2: #192236;
     --card-foreground: #f1f5f9;
 
     --accent: #e11d48;
@@ -35,7 +37,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
@@ -47,4 +49,23 @@
 .menu ul li:hover > .megamenu-content {
   display: flex;
   visibility: visible; /* Show submenus on hover */
+}
+
+@media (min-width: 640px) {
+  .testimonial-slider-gradient::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgb(14 23 42) 0%,
+      rgba(0, 0, 0, 0) 15%,
+      rgba(0, 0, 0, 0) 85%,
+      rgb(14 23 42) 100%
+    );
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }

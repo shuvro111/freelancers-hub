@@ -5,37 +5,41 @@ import Image from "next/image"
 import { ThemeToggle } from "@/theme/theme-toggle"
 import { TbArrowRight, TbMenu2, TbX } from "react-icons/tb"
 
-import { NavMenu } from "@/components/menu/nav-menu"
-import { MobileMenu } from "@/components/mobile-menu"
+import { Button } from "@/components/ui/button/button"
+import { NavMenu } from "@/components/ui/menu/nav-menu"
 import {
   Backdrop,
   Modal,
   ModalContent,
   ModalTrigger,
-} from "@/components/modal/modal"
+} from "@/components/ui/modal/modal"
+import { MobileMenu } from "@/components/mobile-menu"
 
 export const Header = () => {
   const [bookConsultationOpen, setBookConsultationOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="bg-background dark:bg-background-2 absolute left-0 top-0 w-full shadow">
+    <div className="bg-background dark:bg-background-2 fixed left-0 top-0 z-10 w-full shadow-2xl shadow-rose-200/5">
       <header className="container flex items-center justify-between py-2">
         <Image
           src="https://freelancers-hub.ca/wp-content/uploads/2023/02/FH-Logo.png"
           width={200}
           height={20}
           alt="logo"
+          className="h-auto w-auto"
         />
         <NavMenu />
 
         <div className="flex items-center gap-x-4">
-          <button
+          <Button
             onClick={() => setBookConsultationOpen(true)}
-            className="bg-accent hover:bg-accent-hover text-accent-foreground hidden h-full items-center gap-x-2 rounded px-6 py-3 font-semibold transition md:flex"
+            type="button"
+            variant="primary"
+            className="hidden md:flex"
           >
             Book A Consultation <TbArrowRight strokeWidth="3" />
-          </button>
+          </Button>
           <Modal>
             <Backdrop
               open={bookConsultationOpen}

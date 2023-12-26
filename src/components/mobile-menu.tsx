@@ -11,7 +11,7 @@ import {
   Accordion,
   AccordionContent,
   AccordionTrigger,
-} from "./accordion/accordion"
+} from "./ui/accordion/accordion"
 
 export const MobileMenu = () => {
   return (
