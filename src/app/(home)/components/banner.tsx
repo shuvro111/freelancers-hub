@@ -13,6 +13,7 @@ export const Banner = () => {
             width={400}
             height={400}
             alt="banner-image"
+            priority
           />
           <Image
             className="animate-fade-in-up repeat-infinite duration-6000 lg:left[300px] absolute left-[100px] top-[200px] hidden h-auto w-auto lg:left-[20px] lg:block"

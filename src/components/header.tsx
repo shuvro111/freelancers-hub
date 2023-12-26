@@ -28,6 +28,7 @@ export const Header = () => {
           height={20}
           alt="logo"
           className="h-auto w-auto"
+          priority
         />
         <NavMenu />
 

@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 import { Button } from "@/components/ui/button/button"
 
 export const CallToActionV1 = () => {
@@ -36,36 +38,14 @@ export const CallToActionV1 = () => {
 export const CallToActionV2 = () => {
   return (
     <section className="bg-card-2 relative overflow-hidden">
-      <svg
-        style={{ filter: "blur(64px)" }}
-        width="643"
-        height="408"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="to- absolute -bottom-48 left-1/2 -translate-x-1/2 opacity-30"
-      >
-        <path
-          d="M183.151 216.787C86.498 123.868-62.309 137.493 30.03 41.445c92.337-96.049 494.126-6.876 590.779 86.043 96.652 92.919-148.432 154.396-240.769 250.445-92.338 96.048-100.237-68.228-196.889-161.146Z"
-          fill="url(#a)"
-        ></path>
-        <defs>
-          <linearGradient
-            id="a"
-            x1="663.766"
-            y1="168.785"
-            x2="303.65"
-            y2="469.667"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0%" style={{ stopColor: "rgb(244, 63, 94)" }}></stop>
-            <stop
-              offset="100%"
-              style={{ stopColor: "rgb(159, 18, 57)" }}
-            ></stop>
-          </linearGradient>
-        </defs>
-      </svg>
-      <div className="container flex flex-col items-center gap-y-8 py-16 lg:py-28">
+      <Image
+        src="/bg.svg"
+        width={100}
+        height={100}
+        alt="bg"
+        className="to-bottom-48 absolute -bottom-10 left-1/2 w-[640px] -translate-x-1/2 opacity-30 blur-3xl"
+      />
+      <div className="container relative flex flex-col items-center gap-y-8 py-16 lg:py-28">
         <h4 className="text-center text-4xl font-medium lg:text-5xl">
           Get Proven Results
         </h4>
