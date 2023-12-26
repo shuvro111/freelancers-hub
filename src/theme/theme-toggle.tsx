@@ -18,6 +18,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
     <button
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       className={cn(className)}
+      name="theme-toggle"
     >
       <Icons.sun className="h-[1.5rem] w-[1.3rem] dark:hidden" />
       <Icons.moon className="hidden h-5 w-5 dark:block" />

@@ -22,6 +22,7 @@ interface TabContentProps extends BaseProps {
 }
 
 interface TabsContextProps {
+  // eslint-disable-next-line no-unused-vars
   onClick(value: string): void
   activeValue: string
   defaultValue: string
@@ -85,6 +86,7 @@ export const TabTitle = ({
         `${value === activeValue ? cn("", activeClassName) : ""}`
       )}
       onClick={() => onClick(value)}
+      name="tab-title"
     >
       {children}
     </button>

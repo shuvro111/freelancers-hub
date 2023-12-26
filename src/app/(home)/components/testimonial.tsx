@@ -72,12 +72,14 @@ export const Testimonial = () => {
             <button
               id="testimonial-arrow-left"
               className="bg-accent rounded-full p-2 text-lg text-white"
+              name="arrow-left"
             >
               <TbChevronLeft strokeWidth={3} />
             </button>
             <button
               id="testimonial-arrow-right"
               className="bg-accent rounded-full p-2 text-lg text-white"
+              name="arrow-right"
             >
               <TbChevronRight strokeWidth={3} />
             </button>

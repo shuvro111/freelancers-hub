@@ -34,10 +34,11 @@ export const Header = () => {
 
         <div className="flex items-center gap-x-4">
           <Button
+            as="button"
             onClick={() => setBookConsultationOpen(true)}
-            type="button"
             variant="primary"
             className="hidden md:flex"
+            name="book-a-consultation"
           >
             Book A Consultation <TbArrowRight strokeWidth="3" />
           </Button>
@@ -102,7 +103,10 @@ export const Header = () => {
           </Modal>
           <ThemeToggle />
           <div className="flex xl:hidden">
-            <button onClick={() => setMobileMenuOpen(true)}>
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              name="calendy-modal"
+            >
               <TbMenu2 size={28} />
             </button>
             <Modal>

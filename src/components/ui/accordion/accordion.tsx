@@ -50,6 +50,7 @@ const AccordionTrigger = ({
     <button
       onClick={toggleExpand}
       className={cn("flex w-full items-center justify-between", `${className}`)}
+      name="accordion-toggle"
     >
       {children}
       <span>{expand ? iconOpened : iconClosed}</span>

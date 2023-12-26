@@ -33,10 +33,11 @@ export const TabItem = ({
         <h1 className="text-2xl font-medium lg:text-4xl">{heading}</h1>
         <p className="font-light leading-relaxed">{description}</p>
         <Button
-          type="link"
+          as="anchor"
           variant="primary"
           href={buttonLink}
           className="mt-4"
+          name={buttonTitle}
         >
           {buttonTitle} <TbArrowRight strokeWidth="3" />
         </Button>

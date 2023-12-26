@@ -74,10 +74,11 @@ export const Services = () => {
                   {item.description}
                 </p>
                 <Button
-                  type="link"
+                  as="anchor"
                   variant="ghost"
                   href={item.buttonLink}
                   className="mt-4"
+                  name={item.title}
                 >
                   {item.buttonTitle} <TbChevronRight strokeWidth="3" />
                 </Button>

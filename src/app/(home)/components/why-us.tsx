@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { TbAlarm, TbUsers } from "react-icons/tb"
+import { TbUsers } from "react-icons/tb"
 
 const whyUsData = [
   {

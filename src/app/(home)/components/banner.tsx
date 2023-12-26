@@ -55,7 +55,12 @@ export const Banner = () => {
               className="bg-background-2 dark:bg-background-3 ring-background-3 inset-0 flex-1 rounded px-6 py-3 ring-2 focus:outline-none dark:ring-slate-800"
               placeholder="Enter Your Website..."
             />
-            <Button type="link" variant="primary" href="/get-a-quote">
+            <Button
+              as="anchor"
+              variant="primary"
+              href="/get-a-quote"
+              name="get-a-quote"
+            >
               Get A Quote
             </Button>
           </div>

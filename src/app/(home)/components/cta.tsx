@@ -24,8 +24,9 @@ export const CallToActionV1 = () => {
           <Button
             href="#"
             className="mt-8 w-max md:mt-12 xl:mt-0"
-            type="link"
+            as="anchor"
             variant="primary"
+            name="book-a-consultation"
           >
             Book A Consultation
           </Button>
@@ -85,8 +86,9 @@ export const CallToActionV2 = () => {
         <Button
           href="#"
           className="mt-8 min-w-max"
-          type="link"
+          as="anchor"
           variant="primary"
+          name="book-a-consultation"
         >
           Book A Consultation
         </Button>

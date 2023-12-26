@@ -19,7 +19,10 @@ export const Team = () => {
 
         <div className="mt-16 w-full">
           <div className="flex gap-x-4">
-            <button className="arrow-left text-accent text-2xl disabled:text-rose-900">
+            <button
+              className="arrow-left text-accent text-2xl disabled:text-rose-900"
+              name="arrow-left"
+            >
               <TbArrowNarrowLeft />
             </button>
             <CardSlider
@@ -54,7 +57,10 @@ export const Team = () => {
                 />
               ))}
             </CardSlider>
-            <button className="arrow-right text-accent text-2xl disabled:text-rose-900">
+            <button
+              className="arrow-right text-accent text-2xl disabled:text-rose-900"
+              name="arrow-right"
+            >
               <TbArrowNarrowRight />
             </button>
           </div>

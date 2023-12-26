@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { cva, VariantProps } from "class-variance-authority"
-import { ClassValue } from "clsx"
 
 import { cn } from "@/lib/utils"
 
@@ -17,35 +16,42 @@ const ButtonVariants = cva("", {
   },
 })
 
-interface ButtonProps extends VariantProps<typeof ButtonVariants> {
-  children: React.ReactNode
-  type: "link" | "button"
-  onClick?: () => void
-  className?: ClassValue
-  href?: string
-}
+type ButtonProps = {
+  as: "button" | "anchor"
+} & (
+  | React.ButtonHTMLAttributes<HTMLButtonElement>
+  | React.AnchorHTMLAttributes<HTMLAnchorElement>
+) &
+  VariantProps<typeof ButtonVariants>
 
 export const Button = ({
   children,
-  className,
-  type,
   variant,
-  href = "",
-  onClick,
+  as,
+  className = "",
+  ...props
 }: ButtonProps) => {
-  return type === "button" ? (
-    <button
-      className={cn("", ButtonVariants({ variant }), className)}
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  ) : (
-    <Link
-      href={href}
-      className={cn("", ButtonVariants({ variant }), className)}
-    >
-      {children}
-    </Link>
-  )
+  if (as === "anchor") {
+    const { href, ...linkProps } =
+      props as React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }
+
+    return (
+      <Link
+        href={href}
+        className={cn("", ButtonVariants({ variant }), className)}
+        {...linkProps}
+      >
+        {children}
+      </Link>
+    )
+  } else {
+    return (
+      <button
+        className={cn("", ButtonVariants({ variant }), className)}
+        {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
+      >
+        {children}
+      </button>
+    )
+  }
 }
